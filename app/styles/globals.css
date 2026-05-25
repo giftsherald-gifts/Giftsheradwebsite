@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply scroll-smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-soft-black font-sans;
+}
+
+/* Premium Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif font-bold;
+}
+
+h1 {
+  @apply text-5xl md:text-6xl lg:text-7xl;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl lg:text-6xl;
+}
+
+h3 {
+  @apply text-3xl md:text-4xl;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-6 py-3 bg-forest-green text-ivory rounded-lg font-medium transition-all duration-300 hover:bg-forest-green-dark hover:shadow-lg active:scale-95;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-gold text-soft-black rounded-lg font-medium transition-all duration-300 hover:bg-gold-dark hover:shadow-gold-lg active:scale-95;
+}
+
+.btn-outline {
+  @apply px-6 py-3 border-2 border-forest-green text-forest-green rounded-lg font-medium transition-all duration-300 hover:bg-forest-green hover:text-ivory;
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded-xl shadow-premium p-6 transition-all duration-300;
+}
+
+.card:hover {
+  @apply shadow-premium-lg;
+}
+
+.card-premium {
+  @apply bg-gradient-to-br from-ivory to-soft-gray rounded-xl shadow-premium-lg p-8 transition-all duration-300 border border-gold-light;
+}
+
+/* Images */
+img {
+  @apply object-cover;
+}
+
+/* Links */
+a {
+  @apply transition-colors duration-300;
+}
+
+a:hover {
+  @apply text-gold;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ivory-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gold rounded-full hover:bg-gold-dark;
+}
+
+/* Animations */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Loading Skeleton */
+.skeleton {
+  @apply bg-gradient-to-r from-ivory-dark via-ivory to-ivory-dark bg-1000px animate-shimmer;
+}
+
+/* Focus Styles */
+input:focus,
+textarea:focus,
+select:focus {
+  @apply ring-2 ring-gold outline-none;
+}
+
+/* Smooth Transitions */
+.transition-all-smooth {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Accessibility */
+.sr-only {
+  @apply absolute w-1 h-1 p-0 -m-1 overflow-hidden clip-path-inset-50 whitespace-nowrap border-0;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+}
